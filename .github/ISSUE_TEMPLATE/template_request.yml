@@ -1,0 +1,27 @@
+name: Template request
+description: Suggest a new repository template
+title: "[Template] "
+labels:
+  - template-request
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Template name
+      placeholder: typescript-cli
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: What project type should this scaffold?
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Expected files
+      description: List the generated files or checks this template should include.
+    validations:
+      required: true
