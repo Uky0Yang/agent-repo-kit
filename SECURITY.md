@@ -1,12 +1,18 @@
 # Security Policy
 
-Please do not open public issues for sensitive vulnerabilities.
+## Supported Versions
 
-Report security issues through GitHub private vulnerability reporting if available, or open a minimal issue asking for a maintainer contact path without disclosing exploit details.
+Security fixes target the latest release and the `main` branch. Users of older releases should upgrade before requesting a fix.
 
-Security reports are most useful when they affect:
+## Reporting a Vulnerability
 
-- unsafe file overwrite behavior
-- accidental secret generation
-- template content that encourages unsafe defaults
-- generated CI that exposes private data
+Please do not open a public issue for a suspected vulnerability. Use the repository's **Security** tab and select **Report a vulnerability** to submit a private report.
+
+Include the affected version, reproduction steps, expected impact, and any suggested remediation. Do not include real credentials or sensitive user data. We aim to acknowledge reports within seven days and will coordinate disclosure after a fix is available.
+
+Security reports are especially useful when they affect:
+
+- unsafe file overwrite behavior;
+- accidental secret generation;
+- template content that encourages unsafe defaults; or
+- generated CI that exposes private data.
