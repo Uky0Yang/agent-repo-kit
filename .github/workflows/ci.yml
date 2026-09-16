@@ -22,3 +22,24 @@ jobs:
       - run: python -m agent_repo_kit list
       - run: python -m agent_repo_kit create smoke-demo --output-dir /tmp --template python-cli
       - run: cd /tmp/smoke-demo && python -m unittest discover -s tests
+
+  extra-templates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - run: python -m agent_repo_kit create ts-smoke --output-dir /tmp --template typescript-cli
+      - run: npm install --ignore-scripts
+        working-directory: /tmp/ts-smoke
+      - run: npm test
+        working-directory: /tmp/ts-smoke
+      - run: python -m agent_repo_kit create catalog-smoke --output-dir /tmp --template awesome-list
+      - run: python scripts/validate_catalog.py
+        working-directory: /tmp/catalog-smoke
+      - run: python scripts/generate_readme.py
+        working-directory: /tmp/catalog-smoke

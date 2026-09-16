@@ -1,5 +1,7 @@
 # agent-repo-kit
 
+New: tested TypeScript CLI and generated awesome-list templates. [Usage and examples](docs/maintenance-2026-09.md).
+
 Scaffold launch-ready, AI-agent-friendly open-source repositories.
 
 `agent-repo-kit` is a dependency-free Python CLI that creates repositories with the boring but important launch pieces already in place: README, AGENTS.md, license, CI, tests, contributing guide, security policy, issue/PR templates, roadmap, `.gitignore`, and `.gitattributes`.

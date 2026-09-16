@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from .extra_templates import AWESOME_FILES, TYPESCRIPT_FILES
 
 
 @dataclass(frozen=True)
@@ -366,6 +367,8 @@ jobs:
 
 
 TEMPLATES = {
+    "typescript-cli": Template("typescript-cli", "TypeScript CLI with Node tests and CI.", {**COMMON_FILES, **TYPESCRIPT_FILES}),
+    "awesome-list": Template("awesome-list", "Structured catalog with README generation and validation.", {**COMMON_FILES, **AWESOME_FILES}),
     "python-cli": Template("python-cli", "Dependency-free Python CLI package with tests and CI.", {**COMMON_FILES, **PYTHON_CLI_FILES}),
     "agent-docs": Template("agent-docs", "Markdown playbook repository for AI coding agents and teams.", {**COMMON_FILES, **AGENT_DOCS_FILES}),
 }

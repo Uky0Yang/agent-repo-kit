@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 import re
+import json
 from typing import Mapping
 
 from .templates import TEMPLATES, Template
@@ -65,6 +66,7 @@ def build_context(options: CreateOptions) -> dict[str, str]:
         "package_name": package_name,
         "module_name": module_name,
         "description": options.description,
+        "description_json": json.dumps(options.description, ensure_ascii=False),
         "author": options.author,
         "year": options.year,
         "setup_command": setup_command(options.template),
@@ -73,12 +75,20 @@ def build_context(options: CreateOptions) -> dict[str, str]:
 
 
 def setup_command(template: str) -> str:
+    if template == "typescript-cli":
+        return "npm install"
+    if template == "awesome-list":
+        return "python scripts/generate_readme.py"
     if template == "python-cli":
         return "python -m pip install -e ."
     return "python scripts/validate_docs.py"
 
 
 def check_command(template: str, module_name: str) -> str:
+    if template == "typescript-cli":
+        return "npm test"
+    if template == "awesome-list":
+        return "python scripts/validate_catalog.py"
     if template == "python-cli":
         return f"python -m unittest discover -s tests && python -m {module_name} hello"
     return "python scripts/validate_docs.py"

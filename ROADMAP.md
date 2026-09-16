@@ -2,8 +2,7 @@
 
 ## Near Term
 
-- Add `typescript-cli` template
-- Add `awesome-list` template
+- Implemented in v0.2.0: `typescript-cli` and `awesome-list` templates
 - Add `--init-git` option
 - Add `--run-checks` option after generation
 - Add template snapshot tests
