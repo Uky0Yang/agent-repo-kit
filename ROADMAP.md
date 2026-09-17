@@ -12,7 +12,7 @@
 - Add `--github` option to create and push through GitHub CLI
 - Add optional integration with `oss-launch-check`
 - Add optional integration with `repo-context-card`
-- Add PyPI release
+- Published to [PyPI](https://pypi.org/project/agent-repo-kit/0.2.0/) as v0.2.0
 
 ## Long Term
 

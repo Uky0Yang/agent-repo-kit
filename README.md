@@ -14,7 +14,13 @@ This tool turns that setup into one command.
 
 ## Install
 
-From this repository:
+Install from [PyPI](https://pypi.org/project/agent-repo-kit/):
+
+```bash
+python -m pip install agent-repo-kit
+```
+
+For development, from a checkout of this repository:
 
 ```bash
 python -m pip install -e .
