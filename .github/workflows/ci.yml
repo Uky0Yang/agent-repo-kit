@@ -30,7 +30,7 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
       - run: python -m agent_repo_kit create ts-smoke --output-dir /tmp --template typescript-cli
